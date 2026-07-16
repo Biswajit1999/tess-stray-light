@@ -1,0 +1,67 @@
+% Verify all bibliographic metadata before public release.
+
+@article{Ricker2015TESS,
+  author  = {Ricker, George R. and Winn, Joshua N. and Vanderspek, Roland and others},
+  title   = {Transiting Exoplanet Survey Satellite (TESS)},
+  journal = {Journal of Astronomical Telescopes, Instruments, and Systems},
+  volume  = {1},
+  pages   = {014003},
+  year    = {2015},
+  doi     = {10.1117/1.JATIS.1.1.014003},
+  eprint  = {1406.0151},
+  archivePrefix = {arXiv},
+  note    = {Verified via CrossRef API and arXiv abstract page.}
+}
+
+@inproceedings{Jenkins2016SPOC,
+  author    = {Jenkins, Jon M. and Twicken, Joseph D. and McCauliff, Sean and others},
+  title     = {The {TESS} science processing operations center},
+  booktitle = {Software and Cyberinfrastructure for Astronomy IV},
+  series    = {Proceedings of SPIE},
+  volume    = {9913},
+  year      = {2016},
+  doi       = {10.1117/12.2233418},
+  note      = {Verified via CrossRef API.}
+}
+
+@misc{LightkurveCollaboration2018,
+  author = {{Lightkurve Collaboration} and Cardoso, J. V. de M. and others},
+  title  = {Lightkurve: Kepler and TESS time series analysis in Python},
+  year   = {2018},
+  howpublished = {Astrophysics Source Code Library, record ascl:1812.013},
+  note   = {Verified via ASCL entry. lightkurve.utils.TessQualityFlags is the
+            primary source for the verified QUALITY bit constants used
+            throughout this project (cross-checked against the real SDPDD
+            Table 28 and real Sector 1/40 Data Release Notes).}
+}
+
+@misc{TESSSDPDD,
+  author = {{STScI}},
+  title  = {TESS Science Data Products Description Document
+            (EXP-TESS-ARC-ICD-TM-0014)},
+  year   = {2026},
+  howpublished = {\url{https://archive.stsci.edu/missions-and-data/tess}},
+  note   = {Institutional documentation; QUALITY bitmask Table 28 is the
+            primary source cross-checked against lightkurve's constants.}
+}
+
+@misc{TESSSector40DRN,
+  author = {{STScI/TESS Science Team}},
+  title  = {TESS Sector 40 Data Release Notes},
+  year   = {2021},
+  howpublished = {\url{https://archive.stsci.edu/missions/tess/doc/tess_drn/}},
+  note   = {Confirms bit 12 (Straylight, predicted) is disabled for 2-minute/
+            20-second products and bit 13 (Straylight2, "Scattered Light
+            Exclude") is active for 2-minute light curves -- the basis for
+            using Sector 40 (not Sector 1) for the real-data sample.}
+}
+
+@misc{TESSSector1DRN,
+  author = {{STScI/TESS Science Team}},
+  title  = {TESS Sector 1 Data Release Notes},
+  year   = {2018},
+  howpublished = {\url{https://archive.stsci.edu/missions/tess/doc/tess_drn/}},
+  note   = {Confirms bit 12/Straylight was not used at all in Sector 1's
+            QUALITY column and bit 13/Straylight2 did not yet exist at that
+            early SPOC pipeline version.}
+}

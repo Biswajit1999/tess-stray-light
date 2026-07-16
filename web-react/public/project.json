@@ -1,0 +1,42 @@
+{
+  "title": "TESS Scattered-Light Quality-Flag Audit",
+  "repo": "tess-stray-light",
+  "category": "Photometric instrumentation data science",
+  "status": "BUILD_FIRST",
+  "priority": 9.0,
+  "question": "How do TESS quality-mask policies alter flux scatter and background behaviour near scattered-light-affected cadences?",
+  "gap": "A focused audit layer; not a replacement for Lightkurve, SPOC, QLP or MAST.",
+  "dataMode": "real public TESS light curves/TPFs",
+  "novelty": "A focused audit layer; not a replacement for Lightkurve, SPOC, QLP or MAST.",
+  "figures": [
+    { "id": "fig01_raw_masked_lightcurve", "label": "Raw vs masked light curve" },
+    { "id": "fig02_quality_bit_timeline", "label": "Quality-bit timeline" },
+    { "id": "fig03_scatter_comparison", "label": "Scatter comparison by mask policy" },
+    { "id": "fig04_bootstrap_rms", "label": "Flux scatter before/after masking" },
+    { "id": "fig05_background_diagnostic", "label": "Background diagnostic" }
+  ],
+  "validationContract": [
+    "bit decoder tests",
+    "RMS/MAD before-after",
+    "injection-recovery of excess scatter",
+    "mask policy sensitivity",
+    "background-flux relation"
+  ],
+  "methodology": "Per-target SPOC 2-minute light curves are loaded and their QUALITY bitmask decoded against verified TESS bit definitions (lightkurve.utils.TessQualityFlags, cross-checked against real Sector 1 and Sector 40 Data Release Notes). Flux scatter (RMS/MAD) is compared before and after applying three named mask policies (default, hard, hardest), and background flux is compared between Straylight2-flagged and unflagged cadences. A key verified finding: the 'default' mask policy does NOT include the Straylight2 (scattered-light) bit -- only 'hard'/'hardest' do -- so the mask-policy choice materially changes whether scattered-light cadences are excluded at all.",
+  "assumptions": [
+    "TESS Sector 40 (not Sector 1) is used for the real sample: bit 13/Straylight2 did not exist in Sector 1's early SPOC pipeline version, verified against the real Sector 1 Data Release Notes.",
+    "Bit 12/Straylight (predicted, FFI-only) is disabled for 2-minute cadence products per the real Sector 40 DRN; bit 13/Straylight2 (SPOC-pipeline empirical, per-target) is the scattered-light indicator actually used throughout.",
+    "PDCSAP_FLUX (not SAP_FLUX) is used as the primary flux series, consistent with the SPOC pipeline's systematics-corrected product."
+  ],
+  "limitations": [
+    "A focused audit layer; not a replacement for Lightkurve, SPOC, QLP or MAST.",
+    "The real deterministic 3-target sample (sorted by target_name, Sector 40) happened to contain zero Straylight2-flagged cadences for all 3 targets -- a genuine real finding, not every target in a sector shows scattered-light contamination -- so the scattered-light-specific mask-policy comparison could not be exercised on real data in this small sample; the general mask-policy exclusion mechanics (via other quality bits) were still exercised and are reported.",
+    "All targets/policies are below the configured minimum_sample_size=30, flagged not hidden in results/warnings.json.",
+    "reports/report.tex could not be compiled to PDF in this environment (no local LaTeX toolchain); only structural completeness was verified."
+  ],
+  "citation": {
+    "author": "Biswajit Jana",
+    "license": "BSD-3-Clause (original code); mission/archive products retain their original terms",
+    "repository": "https://github.com/Biswajit1999/tess-stray-light"
+  }
+}

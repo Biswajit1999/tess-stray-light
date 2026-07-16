@@ -1,0 +1,9 @@
+{
+  "figure": "fig05_background_diagnostic",
+  "data_kind": "real public TESS light curves/TPFs",
+  "sample_size": 19621,
+  "units": "flux histogram",
+  "git_commit": "LOCAL_UNCOMMITTED",
+  "config_sha256": "2dba64e1e9f9e8d82f837c5c7322b815a7eebfe59d4c2812952a4ce98cb27b96",
+  "package_version": "0.1.0"
+}
