@@ -8,6 +8,6 @@ The following are starting points, not a substitute for final citation verificat
 - TESS quality-flag documentation
 - Lightkurve official documentation/software paper
 
-## Claude requirement
+## Verification requirement
 
 Before finalising `references.bib`, verify each title, author list, year, journal, DOI/arXiv identifier and archive URL against a primary source. If a citation cannot be verified, mark it `TODO_VERIFY` rather than inventing metadata.

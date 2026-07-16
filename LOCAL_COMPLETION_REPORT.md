@@ -1,6 +1,6 @@
 # Local Completion Report — TESS Scattered-Light Quality-Flag Audit
 
-Author: Biswajit Jana. This report documents a local Claude Code implementation pass
+Author: Biswajit Jana. This report documents a local implementation pass
 (project 9 of the 30-project pack, `BUILD_FIRST` priority 9.0/10). No git operations
 were performed. Nothing has been published.
 

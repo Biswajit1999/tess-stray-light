@@ -1,6 +1,6 @@
 # Implementation Plan — TESS Scattered-Light Quality-Flag Audit
 
-Author: Biswajit Jana. Local Claude Code implementation pass, project from the
+Author: Biswajit Jana. Local implementation pass, project from the
 30-project portfolio pack (`BUILD_FIRST`, priority 9.0/10). No git operations.
 
 ## 1. Literature verification (done before any code)
@@ -78,7 +78,7 @@ updates and `references.bib`. No citation needed `TODO_VERIFY`.
 - `mast_fetch.py` — thin, testable wrapper around the FITS-loading logic shared by `fetch_data.py` and `core.py` (load `_lc.fits`, extract TIME/PDCSAP_FLUX/PDCSAP_FLUX_ERR/QUALITY/SAP_BKG/CAMERA/CCD/TICID; raise `DataSchemaError` on missing columns).
 - `quality_flags.py` — verified `TessQualityFlags`-equivalent bit constants (`Straylight=2048`, `Straylight2=4096`, plus full bit table), `DEFAULT_BITMASK`/`HARD_BITMASK`/`HARDEST_BITMASK`, `is_flagged`, `decode_flags` (bit -> name list), mask-policy application function.
 - `lightcurve_metrics.py` — RMS/MAD (raw vs masked), scatter ratio, background-flux vs scatter relation, per-mask-policy summary statistics, cadence binning near flagged segments.
-- `uncertainty.py` — `bootstrap_statistic` (1000 resamples, seed 20260713) and `check_fit_convergence` (covariance condition number + reduced chi-square), kept strictly separate per CLAUDE_TASK.md.
+- `uncertainty.py` — `bootstrap_statistic` (1000 resamples, seed 20260713) and `check_fit_convergence` (covariance condition number + reduced chi-square), kept strictly separate per docs/VALIDATION_CONTRACT.md.
 - `plotting.py` — extend existing `plot_demo` with the 5 required figure-building blocks (called from `scripts/make_figures.py`, not re-implemented there).
 - `report.py` — helper(s) that assemble the machine-readable numbers used verbatim in `reports/report.tex` (avoids hand-typed numbers drifting from `results/summary.json`).
 - `core.py` — extend existing `Summary`/`validate_numeric`/`robust_summary`/`demo_series` with `run_pipeline(manifest_rows, raw_dir, config)` orchestrating per-target processing, catching `InsufficientDataError`/`ConvergenceError`/`DataSchemaError` per target as warnings (never aborting the whole run), raising `InsufficientDataError` immediately on empty input.
