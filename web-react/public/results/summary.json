@@ -1,0 +1,77 @@
+{
+  "project": "TESS Scattered-Light Quality-Flag Audit",
+  "data_kind": "real public TESS light curves/TPFs",
+  "metrics": [
+    {
+      "name": "median_straylight2_fraction",
+      "estimate": 0.0,
+      "uncertainty_low": null,
+      "uncertainty_high": null,
+      "units": "dimensionless",
+      "sample_size": 3
+    },
+    {
+      "name": "median_scatter_ratio_rms_default",
+      "estimate": 1.0014386559860091,
+      "uncertainty_low": null,
+      "uncertainty_high": null,
+      "units": "dimensionless",
+      "sample_size": 3
+    },
+    {
+      "name": "mean_n_excluded_default",
+      "estimate": 699.3333333333334,
+      "uncertainty_low": null,
+      "uncertainty_high": null,
+      "units": "cadences",
+      "sample_size": 3
+    },
+    {
+      "name": "median_scatter_ratio_rms_hard",
+      "estimate": 1.0014386559860091,
+      "uncertainty_low": null,
+      "uncertainty_high": null,
+      "units": "dimensionless",
+      "sample_size": 3
+    },
+    {
+      "name": "mean_n_excluded_hard",
+      "estimate": 699.3333333333334,
+      "uncertainty_low": null,
+      "uncertainty_high": null,
+      "units": "cadences",
+      "sample_size": 3
+    },
+    {
+      "name": "median_scatter_ratio_rms_hardest",
+      "estimate": 1.0014386559860091,
+      "uncertainty_low": null,
+      "uncertainty_high": null,
+      "units": "dimensionless",
+      "sample_size": 3
+    },
+    {
+      "name": "mean_n_excluded_hardest",
+      "estimate": 699.3333333333334,
+      "uncertainty_low": null,
+      "uncertainty_high": null,
+      "units": "cadences",
+      "sample_size": 3
+    }
+  ],
+  "provenance": {
+    "config_sha256": "2dba64e1e9f9e8d82f837c5c7322b815a7eebfe59d4c2812952a4ce98cb27b96",
+    "git_commit": "LOCAL_UNCOMMITTED",
+    "package_version": "0.1.0",
+    "n_targets_attempted": 3,
+    "n_targets_processed": 3
+  },
+  "warnings": [
+    "tess2021175071901-s0040-0000010002018424-0211-s_lc: background correlation skipped: background_flux_correlation: need at least one finite background value in both flagged and unflagged groups",
+    "tess2021175071901-s0040-0000001001497746-0211-s_lc: background correlation skipped: background_flux_correlation: need at least one finite background value in both flagged and unflagged groups",
+    "tess2021175071901-s0040-0000001001498523-0211-s_lc: background correlation skipped: background_flux_correlation: need at least one finite background value in both flagged and unflagged groups",
+    "policy 'default': n_targets=3 below minimum_sample_size=30",
+    "policy 'hard': n_targets=3 below minimum_sample_size=30",
+    "policy 'hardest': n_targets=3 below minimum_sample_size=30"
+  ]
+}
