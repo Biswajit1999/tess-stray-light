@@ -3,7 +3,7 @@
   "data_kind": "real public TESS light curves/TPFs",
   "sample_size": 2,
   "units": "dimensionless",
-  "git_commit": "LOCAL_UNCOMMITTED",
+  "git_commit": "854e40b87374689578ccc4af5b47b0f7284d7f5b",
   "config_sha256": "2dba64e1e9f9e8d82f837c5c7322b815a7eebfe59d4c2812952a4ce98cb27b96",
   "package_version": "0.1.0"
 }

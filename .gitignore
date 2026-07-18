@@ -5,6 +5,8 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 .ipynb_checkpoints/
+uv.lock
+src/tess_stray_light.egg-info/
 data/raw/*
 !data/raw/README.md
 /results/

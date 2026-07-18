@@ -18,6 +18,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+import scienceplots  # noqa: F401
 
 from tess_scattered_light_quality_audit import __version__
 from tess_scattered_light_quality_audit.config import load_config
@@ -33,6 +34,8 @@ from tess_scattered_light_quality_audit.quality_flags import (
     is_flagged,
 )
 from tess_scattered_light_quality_audit.synthetic import SyntheticLightCurveSpec, make_synthetic_lightcurve
+
+plt.style.use(["science", "no-latex"])
 
 
 def _sidecar(path: Path, *, data_kind: str, sample_size: int, units: str, config_path: Path, extra: dict | None = None) -> None:
@@ -68,7 +71,7 @@ def _fig_raw_masked(out_dir, config_path, data_kind, time, flux, quality, tag):
     ax.plot(time[flagged], flux[flagged], "x", color="tab:red", label="Straylight2 flagged", ms=5)
     ax.set_xlabel("Time (BTJD)")
     ax.set_ylabel("PDCSAP flux (e-/s)")
-    ax.set_title(f"Raw vs. masked light curve — {tag} (n={time.size})")
+    ax.set_title(f"Raw vs. masked light curve - {tag} (n={time.size})")
     ax.legend(fontsize=8)
     path = _save(fig, out_dir, "fig01_raw_masked_lightcurve")
     _sidecar(path, data_kind=data_kind, sample_size=time.size, units="flux vs BTJD", config_path=config_path)
@@ -81,7 +84,7 @@ def _fig_quality_timeline(out_dir, config_path, data_kind, time, quality, tag):
     ax.set_xlabel("Time (BTJD)")
     ax.set_ylabel("Straylight2 flag")
     ax.set_yticks([0, 1])
-    ax.set_title(f"Quality-bit timeline — {tag} (n={time.size})")
+    ax.set_title(f"Quality-bit timeline - {tag} (n={time.size})")
     path = _save(fig, out_dir, "fig02_quality_bit_timeline")
     _sidecar(path, data_kind=data_kind, sample_size=time.size, units="boolean vs BTJD", config_path=config_path)
 
@@ -93,7 +96,7 @@ def _fig_scatter_comparison(out_dir, config_path, data_kind, ratios_by_policy, t
     ax.bar(policies, values, color=["tab:blue", "tab:orange", "tab:green"][: len(policies)])
     ax.axhline(1.0, color="black", lw=0.8, ls="--")
     ax.set_ylabel("Scatter ratio (RMS all / RMS kept)")
-    ax.set_title(f"Scatter comparison by mask policy — {tag}")
+    ax.set_title(f"Scatter comparison by mask policy - {tag}")
     path = _save(fig, out_dir, "fig03_scatter_comparison")
     _sidecar(path, data_kind=data_kind, sample_size=len(policies), units="dimensionless", config_path=config_path)
 
@@ -102,7 +105,7 @@ def _fig_bootstrap_rms(out_dir, config_path, data_kind, rms_all, rms_kept, tag):
     fig, ax = plt.subplots(figsize=(5, 4.5))
     ax.bar(["all cadences", "kept (default)"], [rms_all, rms_kept], color=["lightgray", "tab:blue"])
     ax.set_ylabel("Normalized flux RMS")
-    ax.set_title(f"Flux scatter before/after masking — {tag}")
+    ax.set_title(f"Flux scatter before/after masking - {tag}")
     path = _save(fig, out_dir, "fig04_bootstrap_rms")
     _sidecar(path, data_kind=data_kind, sample_size=2, units="dimensionless", config_path=config_path)
 
@@ -110,12 +113,41 @@ def _fig_bootstrap_rms(out_dir, config_path, data_kind, rms_all, rms_kept, tag):
 def _fig_background_diagnostic(out_dir, config_path, data_kind, background, flagged, tag):
     fig, ax = plt.subplots(figsize=(6, 4.5))
     finite = np.isfinite(background)
-    ax.hist(background[~flagged & finite], bins=30, alpha=0.6, label="unflagged", color="tab:blue", density=True)
-    ax.hist(background[flagged & finite], bins=30, alpha=0.6, label="Straylight2 flagged", color="tab:red", density=True)
+    unflagged_values = background[~flagged & finite]
+    flagged_values = background[flagged & finite]
+    if unflagged_values.size:
+        ax.hist(
+            unflagged_values,
+            bins=30,
+            alpha=0.6,
+            label="unflagged",
+            color="tab:blue",
+            density=True,
+        )
+    if flagged_values.size:
+        ax.hist(
+            flagged_values,
+            bins=30,
+            alpha=0.6,
+            label="Straylight2 flagged",
+            color="tab:red",
+            density=True,
+        )
+    else:
+        ax.text(
+            0.98,
+            0.95,
+            "No finite Straylight2-flagged background samples",
+            ha="right",
+            va="top",
+            transform=ax.transAxes,
+            fontsize=8,
+        )
     ax.set_xlabel("SAP background flux")
     ax.set_ylabel("Density")
-    ax.set_title(f"Background diagnostic — {tag}")
-    ax.legend(fontsize=8)
+    ax.set_title(f"Background diagnostic - {tag}")
+    if unflagged_values.size or flagged_values.size:
+        ax.legend(fontsize=8)
     path = _save(fig, out_dir, "fig05_background_diagnostic")
     _sidecar(path, data_kind=data_kind, sample_size=int(finite.sum()), units="flux histogram", config_path=config_path)
 
