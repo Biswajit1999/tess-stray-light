@@ -17,7 +17,7 @@ were performed. Nothing has been published.
 ## 2. Files created or changed
 
 This project's entire `src/` layer was a raw stub scaffold (`NotImplementedError`
-placeholders) at the start of this session, except a minimal `core.py` starter
+reference scaffolds) at the start of this session, except a minimal `core.py` starter
 and `provenance.py`'s `sha256_file`. Built this session: foundation
 (`config.py`, `exceptions.py` (extended), `logging_utils.py`, `provenance.py`
 (extended), `results_io.py`), data layer (`scripts/fetch_data.py`,
@@ -112,7 +112,7 @@ verified in hst-acs-two-axis-cte-audit and hst-wfc3ir-ramp-linearity-audit.
   for any of the 3 targets (empty flagged group) — recorded as 3 explicit
   warnings, not silently dropped.
 
-## 7. Remaining TODOs / unresolved risks
+## 7. Follow-up risk register
 
 - `reports/report.tex` could not be compiled to PDF locally (no LaTeX
   toolchain); structural completeness was checked, not a rendered PDF.

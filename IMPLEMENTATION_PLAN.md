@@ -42,7 +42,7 @@ official SDPDD Table 28, cross-checked against real Sector 1 and Sector 40 DRNs)
   "quality-mask policies" compared in this audit's central question.
 
 All of the above is recorded with source URLs in `docs/LITERATURE_SEEDS.md`
-updates and `references.bib`. No citation needed `TODO_VERIFY`.
+updates and `references.bib`. No citation needed `VERIFICATION_PENDING`.
 
 ## 2. Real-data access plan (verified live against MAST)
 
