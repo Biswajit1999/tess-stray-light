@@ -6,6 +6,13 @@
 
 ## Research evidence and downloads
 
+
+- [Download the machine-readable table profiles](evidence/table-profiles.json) for 2 archived tables. Open `table-evidence.html` from the checkout for the coverage chart.
+- Start with [Fig01 raw masked lightcurve](figures/fig01_raw_masked_lightcurve.json), [Fig02 quality bit timeline](figures/fig02_quality_bit_timeline.json), [Fig03 scatter comparison](figures/fig03_scatter_comparison.json).
+- [View Fig00 smoke test](figures/fig00_smoke_test.png).
+
+To rebuild the table profiles after rebuilding the evidence inventory, run `python scripts/profile_evidence_tables.py` followed by `python scripts/render_table_profiles.py`.
+
 [Open the evidence browser file](evidence.html) for 13 selected files, including [`fig01_raw_masked_lightcurve.json`](figures/fig01_raw_masked_lightcurve.json). Each file has a download link and SHA-256 digest. Serve this checkout with `python -m http.server` to view the static browser.
 
 Rebuild the inventory and browser with `python scripts/evidence_catalog.py` and `python scripts/render_evidence_page.py`.
