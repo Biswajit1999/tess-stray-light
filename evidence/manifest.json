@@ -1,0 +1,255 @@
+{
+  "schema": 1,
+  "project": "TESS Scattered-Light Quality-Flag Audit",
+  "repository": "https://github.com/Biswajit1999/tess-stray-light",
+  "files": [
+    {
+      "label": "Provenance",
+      "path": "data/provenance.yml",
+      "role": "Data and provenance",
+      "bytes": 579,
+      "sha256": "b8f3d7bbe7a269bbe14d96f70c8a5544f37f30d94c8ec1fe3ee8331e5a36f012",
+      "hash_basis": "LF-normalised text",
+      "format": "YML"
+    },
+    {
+      "label": "Manifest",
+      "path": "data/manifest.csv",
+      "role": "Data and provenance",
+      "bytes": 1465,
+      "sha256": "e1ba5c51e08d2ab7bd39d1a609e1aeb9f45854d3acbbc334d0b532ae0848c51b",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 3,
+      "columns": 8,
+      "headers": [
+        "product_id",
+        "source",
+        "source_url",
+        "retrieved_utc",
+        "sha256",
+        "file_size_bytes",
+        "selection_reason"
+      ],
+      "preview": [
+        [
+          "tess2021175071901-s0040-0000010002018424-0211-s_lc",
+          "MAST/TESS",
+          "https://mast.stsci.edu",
+          "2026-07-16T11:18:42.737599+00:00",
+          "5b73a1b0e0f23d743d6c9374b5e48d20bf6b43b18e835f4a5c6b03ff633ae3a1",
+          "2062080",
+          "deterministic first-3 public TESS Sector 40 SPOC 2-minute LC target sample, sorted by target_name"
+        ],
+        [
+          "tess2021175071901-s0040-0000001001497746-0211-s_lc",
+          "MAST/TESS",
+          "https://mast.stsci.edu",
+          "2026-07-16T11:18:42.737599+00:00",
+          "b341db3c1cb0b24071d04fdd93d264e4e4f6ca699d12f778d78ab6eb1bfdbdea",
+          "2062080",
+          "deterministic first-3 public TESS Sector 40 SPOC 2-minute LC target sample, sorted by target_name"
+        ],
+        [
+          "tess2021175071901-s0040-0000001001498523-0211-s_lc",
+          "MAST/TESS",
+          "https://mast.stsci.edu",
+          "2026-07-16T11:18:42.737599+00:00",
+          "391df368e262c7aeb2898fa83717deaed333173c36d41c44adf5a98cf2dcdee4",
+          "2062080",
+          "deterministic first-3 public TESS Sector 40 SPOC 2-minute LC target sample, sorted by target_name"
+        ]
+      ]
+    },
+    {
+      "label": "Research reference",
+      "path": "data/research-reference.json",
+      "role": "Data and provenance",
+      "bytes": 702,
+      "sha256": "ab18b656f614e5c82304c9a5678c3c173cf968b540edd65d08a37c7e70f12c59",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "title",
+        "description",
+        "equations",
+        "references",
+        "anchors"
+      ],
+      "arrays": {
+        "equations": 3,
+        "references": 1,
+        "anchors": 3
+      }
+    },
+    {
+      "label": "Demo",
+      "path": "data/example/demo.csv",
+      "role": "Data and provenance",
+      "bytes": 80,
+      "sha256": "2231cd2f44a7854fefcb8da60f527333a903c9c7a75fbd9154fdde13de699305",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 5,
+      "columns": 3,
+      "headers": [
+        "x",
+        "value",
+        "uncertainty"
+      ],
+      "preview": [
+        [
+          "0",
+          "0.10",
+          "0.02"
+        ],
+        [
+          "1",
+          "0.18",
+          "0.03"
+        ],
+        [
+          "2",
+          "0.14",
+          "0.02"
+        ],
+        [
+          "3",
+          "0.24",
+          "0.04"
+        ]
+      ]
+    },
+    {
+      "label": "Fig01 raw masked lightcurve",
+      "path": "figures/fig01_raw_masked_lightcurve.json",
+      "role": "Tables and numerical results",
+      "bytes": 326,
+      "sha256": "a0df6828eecf027146cc7a14744fb1351bf2993fecda0d35e4ffe96f30e5f875",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "figure",
+        "data_kind",
+        "sample_size",
+        "units",
+        "git_commit",
+        "config_sha256",
+        "package_version"
+      ],
+      "arrays": {}
+    },
+    {
+      "label": "Fig02 quality bit timeline",
+      "path": "figures/fig02_quality_bit_timeline.json",
+      "role": "Tables and numerical results",
+      "bytes": 328,
+      "sha256": "a2a1b057c05156fa64cea04c4d96fcd113dd5166df98975845f02795850b3889",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "figure",
+        "data_kind",
+        "sample_size",
+        "units",
+        "git_commit",
+        "config_sha256",
+        "package_version"
+      ],
+      "arrays": {}
+    },
+    {
+      "label": "Fig03 scatter comparison",
+      "path": "figures/fig03_scatter_comparison.json",
+      "role": "Tables and numerical results",
+      "bytes": 320,
+      "sha256": "a1f50966dab8e71bed6774590d45b75fcb1e22f292e6cfd472d1e905128fc7b9",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "figure",
+        "data_kind",
+        "sample_size",
+        "units",
+        "git_commit",
+        "config_sha256",
+        "package_version"
+      ],
+      "arrays": {}
+    },
+    {
+      "label": "Fig04 bootstrap rms",
+      "path": "figures/fig04_bootstrap_rms.json",
+      "role": "Tables and numerical results",
+      "bytes": 315,
+      "sha256": "5729115bdec6b142603ed15f9a512e2fd897969b0d0a9610505b689222a1a925",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "figure",
+        "data_kind",
+        "sample_size",
+        "units",
+        "git_commit",
+        "config_sha256",
+        "package_version"
+      ],
+      "arrays": {}
+    },
+    {
+      "label": "Fig05 background diagnostic",
+      "path": "figures/fig05_background_diagnostic.json",
+      "role": "Tables and numerical results",
+      "bytes": 328,
+      "sha256": "a93d6c3b3437994402862deed1045fd894fbd9d5797a1c5a7ef7b89efac5602c",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "figure",
+        "data_kind",
+        "sample_size",
+        "units",
+        "git_commit",
+        "config_sha256",
+        "package_version"
+      ],
+      "arrays": {}
+    },
+    {
+      "label": "Fig00 smoke test",
+      "path": "figures/fig00_smoke_test.png",
+      "role": "Figures",
+      "bytes": 145931,
+      "sha256": "6e104c3cdba1becfbf60a54e0703f2bdf3517d73746068d6e54045eff7680253",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Fig01 raw masked lightcurve",
+      "path": "figures/fig01_raw_masked_lightcurve.png",
+      "role": "Figures",
+      "bytes": 304998,
+      "sha256": "f88b8c488db6ddecee095336e4a715285491d287e4cfef85316784b74d5e62b5",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Fig02 quality bit timeline",
+      "path": "figures/fig02_quality_bit_timeline.png",
+      "role": "Figures",
+      "bytes": 67172,
+      "sha256": "37dd0a8bb55d4ca0a14b16876d5b97bbae7b631e0bd62ac05b834a99106cbdd1",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Fig03 scatter comparison",
+      "path": "figures/fig03_scatter_comparison.png",
+      "role": "Figures",
+      "bytes": 86046,
+      "sha256": "76c35fbc388d037e8f6b53d01aec76a4782fcc7c9ba7a7fd8bcb5316ee26d09f",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    }
+  ]
+}

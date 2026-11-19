@@ -1,0 +1,71 @@
+{
+  "project": "TESS Scattered-Light Quality-Flag Audit",
+  "repository": "https://github.com/Biswajit1999/tess-stray-light",
+  "files": [
+    {
+      "label": "Provenance",
+      "path": "data/provenance.yml",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Manifest",
+      "path": "data/manifest.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Research reference",
+      "path": "data/research-reference.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Demo",
+      "path": "data/example/demo.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Fig01 raw masked lightcurve",
+      "path": "figures/fig01_raw_masked_lightcurve.json",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Fig02 quality bit timeline",
+      "path": "figures/fig02_quality_bit_timeline.json",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Fig03 scatter comparison",
+      "path": "figures/fig03_scatter_comparison.json",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Fig04 bootstrap rms",
+      "path": "figures/fig04_bootstrap_rms.json",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Fig05 background diagnostic",
+      "path": "figures/fig05_background_diagnostic.json",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Fig00 smoke test",
+      "path": "figures/fig00_smoke_test.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Fig01 raw masked lightcurve",
+      "path": "figures/fig01_raw_masked_lightcurve.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Fig02 quality bit timeline",
+      "path": "figures/fig02_quality_bit_timeline.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Fig03 scatter comparison",
+      "path": "figures/fig03_scatter_comparison.png",
+      "role": "Figures"
+    }
+  ]
+}
