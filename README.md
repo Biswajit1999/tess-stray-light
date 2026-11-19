@@ -4,6 +4,12 @@
 
 > **Curation:** `BUILD_FIRST` · Priority 9.0/10 · real public TESS light curves/TPFs
 
+## Research evidence and downloads
+
+[Open the evidence browser file](evidence.html) for 13 selected files, including [`fig01_raw_masked_lightcurve.json`](figures/fig01_raw_masked_lightcurve.json). Each file has a download link and SHA-256 digest. Serve this checkout with `python -m http.server` to view the static browser.
+
+Rebuild the inventory and browser with `python scripts/evidence_catalog.py` and `python scripts/render_evidence_page.py`.
+
 ## Scientific question
 
 How do TESS quality-mask policies alter flux scatter and background behaviour near scattered-light-affected cadences?
